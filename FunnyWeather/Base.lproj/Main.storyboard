@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="EuphemiaCAS.ttc">
+            <string>EuphemiaUCAS</string>
+        </array>
+        <array key="KhmerSangamMN.ttf">
+            <string>KhmerSangamMN</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FunnyWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blood.png" translatesAutoresizingMaskIntoConstraints="NO" id="yKo-lh-Gr1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-n5-Pfi">
+                                <rect key="frame" x="0.0" y="81" width="414" height="92.666666666666657"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="70"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agd-gp-9kX">
+                                <rect key="frame" x="30" y="213.66666666666666" width="354" height="39.666666666666686"/>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great minds have purposes; others have wishes." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c85-xS-KCJ">
+                                <rect key="frame" x="22" y="515.66666666666652" width="370" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJf-XK-UOn">
+                                <rect key="frame" x="182" y="604" width="51" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Refresh"/>
+                                <connections>
+                                    <action selector="btnRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cm4-EN-BzZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="agd-gp-9kX" firstAttribute="top" secondItem="EX0-n5-Pfi" secondAttribute="bottom" constant="40" id="0TY-DP-Ryb"/>
+                            <constraint firstItem="yKo-lh-Gr1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1xh-ra-VoA"/>
+                            <constraint firstItem="EX0-n5-Pfi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="3RO-RB-eLH"/>
+                            <constraint firstItem="yKo-lh-Gr1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="46p-Hp-l3q"/>
+                            <constraint firstItem="yKo-lh-Gr1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F33-GB-3JL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c85-xS-KCJ" secondAttribute="bottom" constant="200" id="OMC-QZ-5xV"/>
+                            <constraint firstItem="yKo-lh-Gr1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QVP-68-FqT"/>
+                            <constraint firstItem="c85-xS-KCJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="XFI-5L-yrh"/>
+                            <constraint firstItem="c85-xS-KCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aCW-4F-hlz"/>
+                            <constraint firstItem="EX0-n5-Pfi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jdH-zl-KOC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c85-xS-KCJ" secondAttribute="trailing" constant="22" id="kCG-h6-DDB"/>
+                            <constraint firstItem="EX0-n5-Pfi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n8d-jM-sOt"/>
+                            <constraint firstItem="agd-gp-9kX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="naM-Te-cUU"/>
+                            <constraint firstItem="agd-gp-9kX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="npO-O0-zRV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="agd-gp-9kX" secondAttribute="trailing" constant="30" id="qLZ-fh-W0W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="img" destination="yKo-lh-Gr1" id="k4a-KS-FyH"/>
+                        <outlet property="lblCity" destination="agd-gp-9kX" id="AiA-X4-aHx"/>
+                        <outlet property="lblQuote" destination="c85-xS-KCJ" id="Bbx-me-qnn"/>
+                        <outlet property="lblTemp" destination="EX0-n5-Pfi" id="eMv-en-yCI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.39130434782609" y="118.20652173913044"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Blood.png" width="750" height="1334"/>
+        <image name="Refresh" width="51" height="44"/>
+    </resources>
 </document>
